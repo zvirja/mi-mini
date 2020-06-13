@@ -284,6 +284,7 @@ function change_aria_enabled(){
 	var v = document.form.aria_enable[0].checked;
 	showhide_div('row_aria_pport', v);
 	showhide_div('row_aria_rport', v);
+	showhide_div('row_aria_secret', v);
 }
 
 function applyRule(){
@@ -817,6 +818,14 @@ function done_validating(action){
                                             </th>
                                             <td colspan="2">
                                                 <input type="text" maxlength="5" size="5" name="aria_pport" class="input" value="<% nvram_get_x("", "aria_pport"); %>" onkeypress="return is_number(this,event);"/>
+                                            </td>
+                                        </tr>
+                                        <tr id="row_aria_secret">
+                                            <th>
+                                                <#StorageAriaSecret#>
+                                            </th>
+                                            <td colspan="2">
+                                                <input type="text" name="aria_secret" class="input" value="<% nvram_get_x("", "aria_secret"); %>" />
                                             </td>
                                         </tr>
                                         <tr id="row_aria_rport">

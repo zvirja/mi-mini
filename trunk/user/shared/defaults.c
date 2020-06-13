@@ -389,6 +389,7 @@ struct nvram_pair router_defaults[] = {
 	{ "aria_enable", "0" },
 	{ "aria_pport", "16888" },
 	{ "aria_rport", "6800" },
+	{ "aria_secret" "" },
 	{ "aria_ropen", "0" },
 	{ "hdd_spindt", "0" },
 	{ "hdd_apmoff", "0" },

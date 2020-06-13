@@ -41,11 +41,7 @@ func_start()
 
 	aria_pport=`nvram get aria_pport`
 	aria_rport=`nvram get aria_rport`
-	aria_user=`nvram get http_username`
-	aria_pass=`nvram get http_passwd`
-
-	[ -z "$aria_rport" ] && aria_rport="6800"
-	[ -z "$aria_pport" ] && aria_pport="16888"
+	aria_secret=`nvram get aria_secret`
 
 	if [ ! -f "$FILE_CONF" ] ; then
 		[ ! -d "$DIR_DL1" ] && mkdir -p "$DIR_DL1"
@@ -54,9 +50,7 @@ func_start()
 
 ### XML-RPC
 rpc-listen-all=true
-#rpc-secret=
-rpc-user=$aria_user
-rpc-passwd=$aria_pass
+rpc-secret=$aria_secret
 
 ### Common
 dir=$DIR_DL1
@@ -121,8 +115,7 @@ angular
   port: '$aria_rport',
   encrypt: false,
   auth: {
-  user: '$aria_user',
-  pass: '$aria_pass'
+    token: '$aria_secret'
   },
   directURL: ''
 })

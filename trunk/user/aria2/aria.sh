@@ -57,6 +57,9 @@ dir=$DIR_DL1
 max-download-limit=0
 max-overall-download-limit=6M
 disable-ipv6=true
+auto-save-interval=30
+save-session-interval=30
+force-save=true
 
 ### File
 file-allocation=trunc
@@ -76,7 +79,7 @@ bt-stop-timeout=0
 enable-dht=true
 #enable-dht6=false
 enable-peer-exchange=true
-seed-ratio=1.5
+seed-ratio=2.0
 #seed-time=60
 max-upload-limit=0
 max-overall-upload-limit=5M
